@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- https://www.youtube.com/watch?v=cF3oyFXjRWk -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Parallax #1</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <img src="https://www.bing.com/az/hprichbg/rb/YellowstoneVisitors_EN-IN10419224583_1920x1080.jpg" alt="Bing: Yellowstone National Park, USA" class="img" id="" />
+    <div class="container">
+      <h1>Parallax Scroll</h1>
+    </div>
+  
+    <style type="text/css">
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: 'Varela Round', sans-serif;
+      }
+      .img {
+        position: relative;
+        z-index: -1;
+        width: 100%;
+      }
+      .container {
+        width: 100%;
+        height: 720px;
+        margin-top: -10px;
+        z-index: 1;
+        background-color: #1abc9c;
+        position: relative;
+        text-align: center;
+        padding-top: 100px;
+      }
+    </style>
+  
+    <script type="text/javascript">
+      var ypos;
+      window.addEventListener("scroll", parallax);
+      function parallax() {
+        ypos = window.pageYOffset;
+        $('.img').css({
+          'top': ypos*0.4+'px',
+        });
+      }
+    </script>
+  </body>
+</html>
